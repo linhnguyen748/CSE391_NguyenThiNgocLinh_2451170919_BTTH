@@ -71,7 +71,6 @@
     transform: translateY(-1px);
 }
 
-/* Animation khi vào trang */
 @keyframes heroFadeIn {
     from {
         opacity: 0;
