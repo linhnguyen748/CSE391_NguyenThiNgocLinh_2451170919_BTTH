@@ -1,0 +1,52 @@
+.about {
+    padding: 100px 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Cột ảnh nhỏ hơn cột chữ */
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 25px 25px 0px var(--primary-color); /* Hiệu ứng đổ bóng đặc biệt */
+    transition: var(--transition);
+}
+
+.about-image img:hover {
+    transform: translate(10px, 10px);
+    box-shadow: 15px 15px 0px var(--primary-color);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+/* [REFACTOR] Optimize responsive breakpoints for About */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
