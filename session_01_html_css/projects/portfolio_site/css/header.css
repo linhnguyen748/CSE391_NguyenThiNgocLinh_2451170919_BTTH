@@ -99,7 +99,7 @@
         align-items: center;
         gap: 20px;
     }
-
+    
     .nav-toggle:checked ~ .nav {
         right: 0;
     }
