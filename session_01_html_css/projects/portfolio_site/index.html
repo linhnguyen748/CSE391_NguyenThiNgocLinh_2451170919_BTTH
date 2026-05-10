@@ -3,42 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Professional Portfolio | Creative Developer</title>
+    
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+
     <header class="header">
         <div class="container nav-wrapper">
-            <a href="/" class="logo">PORT<span>FOLIO</span></a>
+            <a href="#" class="logo">PRO<span>FILE</span></a>
             
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
             </label>
 
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="#" class="nav-link">Home</a></li>
-                    <li><a href="#" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link">Projects</a></li>
-                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#work" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-content">
-                <h1 class="hero-title">Creative Web Developer</h1>
+                <h1 class="hero-title">Creative Developer & Educator</h1>
                 <p class="hero-subtitle">
-                    Tôi là một giáo viên và lập trình viên, chuyên xây dựng những trải nghiệm web chuyên nghiệp, tinh tế.
+                    Tôi xây dựng những trải nghiệm Web hiện đại, tinh tế và dễ tiếp cận. 
+                    Sự kết hợp giữa tư duy lập trình và kỹ năng sư phạm.
                 </p>
                 <a href="#work" class="btn-cta">View My Work</a>
             </div>
         </section>
+
+        <section class="about container" id="about">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://picsum.photos/400/500?grayscale" alt="About Me">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-description">
+                        Là một giáo viên có niềm đam mê mãnh liệt với công nghệ, tôi luôn tìm cách tối ưu hóa 
+                        mọi dòng mã theo nguyên tắc <strong>DRY</strong> và <strong>Orthogonality</strong>.
+                    </p>
+                    <p class="about-description">
+                        Mục tiêu của tôi là tạo ra những sản phẩm không chỉ đẹp về giao diện mà còn 
+                        vững chắc về cấu trúc bên trong.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills container" id="skills">
+            <h2 class="section-title text-center">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-info"><span>HTML5 / Semantic HTML</span><span>95%</span></div>
+                    <div class="progress-bar"><span class="progress" style="--width: 95%"></span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>CSS3 / Grid / Flexbox</span><span>90%</span></div>
+                    <div class="progress-bar"><span class="progress" style="--width: 90%"></span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>JavaScript (ES6+)</span><span>80%</span></div>
+                    <div class="progress-bar"><span class="progress" style="--width: 80%"></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio container" id="work">
+            <h2 class="section-title text-center">My Projects</h2>
+            <div class="portfolio-grid">
+                <a href="#img1" class="portfolio-item">
+                    <img src="https://picsum.photos/id/10/600/400" alt="Project 1">
+                    <div class="item-overlay"><span>Branding</span></div>
+                </a>
+                <a href="#img2" class="portfolio-item">
+                    <img src="https://picsum.photos/id/20/600/400" alt="Project 2">
+                    <div class="item-overlay"><span>Web Design</span></div>
+                </a>
+                <a href="#img3" class="portfolio-item">
+                    <img src="https://picsum.photos/id/30/600/400" alt="Project 3">
+                    <div class="item-overlay"><span>UI/UX</span></div>
+                </a>
+                <a href="#img4" class="portfolio-item"><img src="https://picsum.photos/id/40/600/400" alt="Project 4"><div class="item-overlay"><span>App</span></div></a>
+                <a href="#img5" class="portfolio-item"><img src="https://picsum.photos/id/50/600/400" alt="Project 5"><div class="item-overlay"><span>Graphic</span></div></a>
+                <a href="#img6" class="portfolio-item"><img src="https://picsum.photos/id/60/600/400" alt="Project 6"><div class="item-overlay"><span>SEO</span></div></a>
+            </div>
+
+            <div id="img1" class="lightbox">
+                <a href="#work" class="lightbox-close"></a>
+                <div class="lightbox-content">
+                    <img src="https://picsum.photos/id/10/1200/800" alt="Project 1 Large">
+                </div>
+            </div>
+            </section>
+
+        <section class="contact container" id="contact">
+            <div class="contact-wrapper">
+                <h2 class="section-title text-center">Get In Touch</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-cta">Send Message</button>
+                </form>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Email</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
