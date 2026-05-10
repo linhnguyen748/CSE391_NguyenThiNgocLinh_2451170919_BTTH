@@ -38,12 +38,10 @@
     border-color: var(--primary-color);
 }
 
-/* Border đỏ khi dữ liệu nhập sai định dạng */
 .form-group input:invalid:not(:placeholder-shown) {
     border-color: #ef4444;
 }
 
-/* Border xanh khi dữ liệu hợp lệ */
 .form-group input:valid:not(:placeholder-shown) {
     border-color: #10b981;
 }
