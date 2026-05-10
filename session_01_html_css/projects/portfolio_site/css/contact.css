@@ -1,0 +1,54 @@
+.contact {
+    padding: 100px 20px;
+}
+
+.contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+/* Border đỏ khi dữ liệu nhập sai định dạng */
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+/* Border xanh khi dữ liệu hợp lệ */
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
+
+.contact-form .btn-cta {
+    width: 100%;
+    cursor: pointer;
+}
