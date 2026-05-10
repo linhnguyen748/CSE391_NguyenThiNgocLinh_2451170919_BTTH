@@ -1,38 +1,88 @@
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), var(--light-color);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary-color);
+    filter: blur(150px);
+    opacity: 0.1;
+    top: -50px;
+    right: -50px;
+}
+
+.hero-content {
     text-align: center;
+    padding: 0 20px;
+    max-width: 900px;
+    z-index: 1;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: var(--dark-color);
-    margin-bottom: 1rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-main);
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* --- CTA Button & Hover Effect --- */
 .btn-cta {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 16px 40px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: var(--transition);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
     border: 2px solid var(--primary-color);
+    transition: var(--transition);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
 }
 
 .btn-cta:hover {
     background-color: transparent;
     color: var(--primary-color);
     transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.2);
+}
+
+.btn-cta:active {
+    transform: translateY(-1px);
+}
+
+/* Animation khi vào trang */
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: heroFadeIn 1s ease-out forwards;
 }
