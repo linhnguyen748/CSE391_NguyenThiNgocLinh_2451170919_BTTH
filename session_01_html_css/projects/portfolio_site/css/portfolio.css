@@ -1,92 +1,124 @@
-.portfolio {
-    padding: 100px 20px;
+.portfolio-section {
+    padding: 100px 0;
 }
 
+/* Filters */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .portfolio-item {
     position: relative;
-    display: block;
-    aspect-ratio: 3 / 2; 
-    border-radius: 12px;
     overflow: hidden;
-    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/3;
     object-fit: cover;
-    transition: var(--transition); 
+    display: block;
+    transition: transform 0.4s ease;
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1) ;
+    transform: scale(1.1);
 }
 
-.item-overlay {
+/* Overlay Effect */
+.portfolio-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(37, 99, 235, 0.8); 
+    inset: 0;
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.9) 0%, rgba(30, 41, 59, 0.4) 60%, transparent 100%);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
     opacity: 0;
-    transition: var(--transition);
+    color: white;
+    transition: opacity 0.3s ease;
 }
 
-.portfolio-item:hover .item-overlay {
+.portfolio-item:hover .portfolio-overlay {
     opacity: 1;
 }
 
-.item-overlay span {
-    color: white;
-    font-weight: 600;
-    border: 2px solid white;
-    padding: 8px 20px;
-    border-radius: 50px;
-}
+.portfolio-overlay h3 { margin-bottom: 5px; font-size: 1.2rem; }
+.portfolio-overlay p { font-size: 0.9rem; opacity: 0.8; }
 
+/* CSS-Only Lightbox */
 .lightbox {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.9);
-    display: none; 
-    z-index: 2000;
+    display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000;
+    padding: 20px;
 }
 
-.lightbox:target {
-    display: flex;
-}
-
-.lightbox-content img {
+.lightbox img {
     max-width: 90%;
     max-height: 80vh;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
 }
 
 .lightbox-close {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    cursor: default;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: white;
+    transition: color 0.3s;
 }
 
+.lightbox-close:hover {
+    color: var(--color-secondary);
+}
 
-@media (max-width: 992px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); 
-    }
+/* Tablet & Mobile responsive */
+@media (max-width: 1024px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; 
-    }
+    .portfolio-grid { grid-template-columns: 1fr; }
 }
