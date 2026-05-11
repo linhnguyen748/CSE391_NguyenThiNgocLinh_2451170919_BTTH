@@ -1,0 +1,10 @@
+:root {
+    --color-primary: #7c3aed;    /* Violet (tương tự hình mẫu) */
+    --color-secondary: #facc15;  /* Yellow cho tên trong Hero */
+    --color-dark: #1e293b;
+    --color-light: #ffffff;
+    --color-text: #334155;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --header-height: 70px;
+    --transition: all 0.3s ease;
+}
