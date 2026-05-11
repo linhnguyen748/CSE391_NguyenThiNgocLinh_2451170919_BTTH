@@ -1,51 +1,23 @@
-.skills {
-    padding: 80px 20px;
-    background-color: #ffffff;
+.skills-section { padding: 100px 0; background-color: #f8fafc; }
+.section-title { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
-
-.text-center { text-align: center; margin-bottom: 3rem; }
-
-.skills-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .skill-item {
-    margin-bottom: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-color);
-}
-
-.progress-bar {
-    width: 100%;
-    height: 12px;
-    background-color: #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    display: block;
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.skill-name { color: #000000; font-weight: 600; } /* Đã đổi sang màu đen */
+.skill-percentage { color: var(--color-primary); font-weight: 600; }
+.skill-bar { background: #e2e8f0; height: 12px; border-radius: 10px; overflow: hidden; }
+.skill-progress {
     height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    width: 0; 
-    animation: loadProgress 2s ease-in-out forwards;
+    background: linear-gradient(90deg, var(--color-primary), #a855f7);
+    transition: width 1.5s ease-in-out;
 }
-
-@keyframes loadProgress {
-    from { width: 0; }
-    to { width: var(--width); }
-}
-
-@media (max-width: 768px) {
-    .skills-container {
-        padding: 0 10px;
-    }
-}
+@media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
