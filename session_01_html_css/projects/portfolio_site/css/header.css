@@ -1,110 +1,68 @@
-.header {
+header {
     position: sticky;
     top: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    background: var(--color-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
-.nav-wrapper {
-    height: 100%;
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 800;
-    text-decoration: none;
-    color: var(--dark-color);
-    letter-spacing: -1px;
+    font-weight: bold;
+    color: var(--color-primary);
 }
 
-.logo span {
-    color: var(--primary-color);
-}
-
-/* Desktop Menu */
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-main);
+nav a {
+    margin-left: 2rem;
     font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 4px;
     transition: var(--transition);
 }
 
-.nav-link:hover {
-    color: var(--primary-color);
-    background-color: rgba(37, 99, 235, 0.05);
+nav a:hover {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 }
 
-/* --- Mobile Menu (CSS-only) --- */
-.nav-toggle {
+/* Mobile Menu */
+.menu-toggle, .hamburger {
     display: none;
 }
 
-.nav-toggle-label {
-    display: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 1001;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background: var(--dark-color);
-    height: 2px;
-    width: 24px;
-    border-radius: 2px;
-    position: relative;
-    transition: var(--transition);
-}
-
-.nav-toggle-label span::before { content: ''; position: absolute; top: -8px; }
-.nav-toggle-label span::after { content: ''; position: absolute; top: 8px; }
-
-/* Responsive Header */
 @media (max-width: 768px) {
-    .nav-toggle-label {
+    .hamburger {
         display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
     }
 
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%; 
-        width: 70%;
-        height: 100vh;
-        background: var(--bg-white);
-        padding-top: 100px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: var(--transition);
-    }
-
-    .nav-list {
+    nav {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--color-light);
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .nav-toggle:checked ~ .nav {
-        right: 0;
+        display: none;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
-    .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
-    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
-    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
+    nav a {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: flex;
+    }
 }
