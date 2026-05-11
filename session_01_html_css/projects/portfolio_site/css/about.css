@@ -1,52 +1,52 @@
-.about {
-    padding: 100px 20px;
+.about-section {
+    padding: 100px 0;
+    background-color: var(--color-light);
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Cột ảnh nhỏ hơn cột chữ */
-    gap: 60px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
     align-items: center;
 }
 
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
 .about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 25px 25px 0px var(--primary-color); /* Hiệu ứng đổ bóng đặc biệt */
-    transition: var(--transition);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Làm ảnh tròn */
+    object-fit: cover;
+    border: 5px solid var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.about-image img:hover {
-    transform: translate(10px, 10px);
-    box-shadow: 15px 15px 0px var(--primary-color);
-}
-
-.section-title {
+.about-content h2 {
     font-size: 2.5rem;
-    color: var(--dark-color);
+    color: var(--color-dark);
     margin-bottom: 1.5rem;
     position: relative;
-    display: inline-block;
 }
 
-.about-description {
-    font-size: 1.1rem;
-    color: var(--text-main);
-    margin-bottom: 1.2rem;
-    text-align: justify;
+.about-content .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
 }
 
-/* [REFACTOR] Optimize responsive breakpoints for About */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .about-grid {
-        grid-template-columns: 1fr; 
-        gap: 40px;
+        grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
-    .about-image {
-        max-width: 400px;
-        margin: 0 auto;
+    .about-image img {
+        width: 200px;
+        height: 200px;
     }
 }
