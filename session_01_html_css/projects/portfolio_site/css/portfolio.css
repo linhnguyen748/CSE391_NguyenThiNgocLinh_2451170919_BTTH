@@ -80,10 +80,10 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center ;
+    align-items: center ;
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden ;
     transition: all 0.3s ease;
     z-index: 2000;
     padding: 20px;
