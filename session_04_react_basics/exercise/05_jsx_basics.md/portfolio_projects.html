@@ -1,0 +1,79 @@
+// ============================================
+// TODO 1: Component CategoryBadge
+// ============================================
+function CategoryBadge({ category }) {
+    const catClass = category === 'web' ? 'cat-web' : 
+                     category === 'mobile' ? 'cat-mobile' : 'cat-design';
+    
+    // Viết hoa chữ cái đầu tiên
+    const label = category.charAt(0).toUpperCase() + category.slice(1);
+    
+    return <span className={`category ${catClass}`}>{label}</span>;
+}
+
+// ============================================
+// TODO 2: Component ProjectCard
+// ============================================
+function ProjectCard({ title, category, image, description, tags, featured }) {
+    return (
+        <div className="project-card">
+            <img src={image} alt={title} />
+            
+            {/* Conditional Rendering: Chỉ hiện khi featured là true */}
+            {featured && <span className="featured">⭐ Nổi bật</span>}
+            
+            <div className="info">
+                <CategoryBadge category={category} />
+                <h3>{title}</h3>
+                <p className="desc">{description}</p>
+                <div className="tags">
+                    {tags.map((tag, index) => (
+                        <span key={index} className="tag">{tag}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+// ============================================
+// TODO 3: Component ProjectList
+// ============================================
+function ProjectList({ projects }) {
+    // Early return xử lý empty state
+    if (!projects || projects.length === 0) {
+        return <div className="empty-state">Chưa có dự án nào</div>;
+    }
+
+    return (
+        <div>
+            <div className="project-grid">
+                {projects.map(project => (
+                    <ProjectCard 
+                        key={project.id} 
+                        title={project.title}
+                        category={project.category}
+                        image={project.image}
+                        description={project.description}
+                        tags={project.tags}
+                        featured={project.featured}
+                    />
+                ))}
+            </div>
+            
+            {/* Thống kê số lượng */}
+            <div className="stats">
+                <span>Tổng số dự án: {projects.length}</span>
+            </div>
+        </div>
+    );
+}
+
+// ============================================
+// TODO 4: Component App
+// ============================================
+function App() {
+    return (
+        <ProjectList projects={projects} />
+    );
+}
